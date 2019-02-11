@@ -1,0 +1,21 @@
+<!-- include a-frame -->
+<script src="lib/aframe/build/aframe-v0.9.0.min.js"></script>
+
+<!-- include ar.js for aframe -->
+<script src='lib/aframe-ar.js'></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.1/dist/aframe-extras.min.js"></script>
+<script>ARjs.Context.baseURL = 'lib/three.js/'</script>
+
+<!-- start the body of your page -->
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled:false;' gltf-model="dracoDecoderPath: /lib/draco/">
+        <a-assets>
+            <a-asset-item id="model" src="/lib/data/pika-valentines.glb"></a-asset-item>
+        </a-assets>
+        <a-entity position="0 -0.2 0" rotation="-90 0 0" scale="1.5 1.5 1.5" gltf-model="#model" crossorigin="anonymous"></a-entity>
+		<!-- <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere> -->
+		<a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
